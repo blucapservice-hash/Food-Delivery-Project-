@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Tailwind css</title>
+<link rel="icon" href="data:,">
+    <link rel="stylesheet" href="src/style.css">
+</head>
+<body class="bg-gray-50 ">
+    <div id="login-page" class="fixed inset-0 z-50 flex items-center justify-center bg-white">
+        <div class="text-center p-8 max-w-sm w-full">
+            <h1 class="text-4xl font-bold text-orange-500 mb-6">Snacks Point</h1>
+            <input type="email" id="email" placeholder="admin@gmail.com" class="w-full mb-4 p-4 bg-gray-100 rounded-2xl outline-none">
+            <input type="password" id="pass" placeholder="admin@123" class="w-full mb-6 p-4 bg-gray-100 rounded-2xl outline-none">
+            <button onclick="login()" class="w-full bg-orange-500 text-white p-4 rounded-2xl font-bold shadow-lg shadow-orange-200">Sign In</button>
+        </div>
+    </div>
+
+    <div id="main-app" class="hidden max-w-7xl mx-auto flex flex-col md:flex-row min-h-screen">
+        
+        <aside class="w-20 md:w-24 bg-white border-r flex flex-col items-center py-8 space-y-10">
+            <div class="text-orange-500 text-3xl"><i class="fa fa-cutlery"></i></div>
+            <nav class="flex flex-col space-y-8 text-gray-400 text-xl">
+                <a href="#" class="text-orange-500"><i class="fa fa-th-large"></i></a>
+                <a href="#" class="hover:text-orange-500"><i class="fa fa-heart-o"></i></a>
+                <a href="#" class="hover:text-orange-500"><i class="fa fa-list-alt"></i></a>
+                <a href="#" class="hover:text-orange-500"><i class="fa fa-user-o"></i></a>
+            </nav>
+        </aside>
+
+        <main class="flex-1 p-6 md:p-10">
+            <header class="flex justify-between items-center mb-10">
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-800">Delicious Food</h2>
+                    <p class="text-gray-400">Discover the best food around you</p>
+                </div>
+                <div class="flex items-center gap-4">
+                    <div class="bg-white p-3 rounded-2xl shadow-sm border border-gray-100">
+                        <i class="fa fa-shopping-basket text-orange-500"></i>
+                        <span id="cart-count" class="ml-1 font-bold">0</span>
+                    </div>
+                </div>
+            </header>
+
+            <section class="mb-10">
+                <div class="relative mb-8">
+                    <i class="fa fa-search absolute left-5 top-5 text-gray-400"></i>
+                    <input type="text" placeholder="Search your favorite food..." class="w-full p-5 pl-14 bg-white rounded-3xl shadow-sm border-none focus:ring-2 focus:ring-orange-200 outline-none">
+                </div>
+
+                <div class="flex gap-4 overflow-x-auto pb-4 no-scrollbar">
+                    <button onclick="filterCat('all')" class="cat-btn active">All</button>
+                    <button onclick="filterCat('biryani')" class="cat-btn">🍛 Biryani</button>
+                    <button onclick="filterCat('pizza')" class="cat-btn">🍕 Pizza</button>
+                    <button onclick="filterCat('paneer')" class="cat-btn">🧀 Paneer</button>
+                    <button onclick="filterCat('chinese')" class="cat-btn">🍜 Chinese</button>
+                </div>
+            </section>
+
+            <div id="food-items" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                </div>
+        </main>
+    </div>
+
+    <script src="index.js"></script>
+
+</body>
+</html>
